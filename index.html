@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Antrian Kasir</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Simulasi Antrian Kasir Rumah Makan Cepat Saji</h1>
+        <p>Meningkatkan Kualitas Pelayanan</p>
+
+        <div class="controls">
+            <label for="arrivalRate">Tingkat Kedatangan Pelanggan (detik per pelanggan):</label>
+            <input type="number" id="arrivalRate" value="3" min="1">
+            <label for="serviceMin">Waktu Pelayanan Min (detik):</label>
+            <input type="number" id="serviceMin" value="5" min="1">
+            <label for="serviceMax">Waktu Pelayanan Maks (detik):</label>
+            <input type="number" id="serviceMax" value="10" min="1">
+            <button id="startButton">Mulai Simulasi</button>
+            <button id="stopButton" disabled>Hentikan Simulasi</button>
+            <button id="resetButton">Reset Simulasi</button>
+        </div>
+
+        <div class="simulation-area">
+            <div class="queue-section">
+                <h2>Antrian Pelanggan (<span id="queueCount">0</span>)</h2>
+                <div id="queueList" class="list-container">
+                    </div>
+            </div>
+
+            <div class="cashier-section">
+                <h2>Kasir</h2>
+                <div class="cashier-status" id="cashier1">
+                    <h3>Kasir 1</h3>
+                    <p>Status: <span id="cashier1Status" class="status-ready">Siap Melayani</span></p>
+                    <p>Pelanggan Dilayani: <span id="cashier1Customer">Tidak ada</span></p>
+                    <p>Sisa Waktu: <span id="cashier1Time">0</span> detik</p>
+                </div>
+                </div>
+        </div>
+
+        <div class="metrics">
+            <h2>Statistik Simulasi</h2>
+            <p>Total Pelanggan Datang: <span id="totalCustomersArrived">0</span></p>
+            <p>Total Pelanggan Dilayani: <span id="totalCustomersServed">0</span></p>
+            <p>Rata-rata Waktu Tunggu: <span id="averageWaitingTime">0.00</span> detik</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
